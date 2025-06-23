@@ -7,7 +7,7 @@ import { Project } from '@/types/projects'
 
 type ProjectFormData = Omit<Project, 'id' | 'created_at' | 'updated_at'>
 
-export default function ProjectForm({ params }: { params: { action: string, id?: string } }) {
+export default function ProjectForm({ params }: { params: Promise<{ action: string, id?: string }> }) {
   const router = useRouter()
   const [project, setProject] = useState<ProjectFormData>({
     title: '',
@@ -22,12 +22,18 @@ export default function ProjectForm({ params }: { params: { action: string, id?:
   })
   const [newTag, setNewTag] = useState('')
   const [loading, setLoading] = useState(false)
+  const [resolvedParams, setResolvedParams] = useState<{ action: string, id?: string }>({ action: '' })
 
   useEffect(() => {
-    if (params.action === 'edit' && params.id) {
-      loadProject(params.id)
+    const resolveParams = async () => {
+      const resolved = await params
+      setResolvedParams(resolved)
+      if (resolved.action === 'edit' && resolved.id) {
+        loadProject(resolved.id)
+      }
     }
-  }, [params.action, params.id])
+    resolveParams()
+  }, [params])
 
   const loadProject = async (id: string) => {
     try {
@@ -44,8 +50,8 @@ export default function ProjectForm({ params }: { params: { action: string, id?:
     setLoading(true)
     
     try {
-      if (params.action === 'edit' && params.id) {
-        await updateProject(params.id, project)
+      if (resolvedParams.action === 'edit' && resolvedParams.id) {
+        await updateProject(resolvedParams.id, project)
       } else {
         await addProject(project)
       }
@@ -77,7 +83,7 @@ export default function ProjectForm({ params }: { params: { action: string, id?:
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold mb-6">
-        {params.action === 'edit' ? 'Modifier le Projet' : 'Nouveau Projet'}
+        {resolvedParams.action === 'edit' ? 'Modifier le Projet' : 'Nouveau Projet'}
       </h1>
       
       <form onSubmit={handleSubmit} className="space-y-6">

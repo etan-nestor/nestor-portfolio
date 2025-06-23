@@ -60,9 +60,20 @@ export const getProjectById = async (id: string): Promise<Project> => {
     throw new Error("Projet non trouvé")
   }
   
+  const data = docSnap.data()
   return {
     id: docSnap.id,
-    ...docSnap.data()
+    title: data.title,
+    description: data.description,
+    tags: data.tags || [],
+    image: data.image,
+    live: data.live,
+    client: data.client,
+    type: data.type,
+    category: data.category,
+    status: data.status,
+    created_at: data.created_at?.toDate() || new Date(),
+    updated_at: data.updated_at?.toDate() || new Date()
   } as Project
 }
 

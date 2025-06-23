@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  matcher: ['/admin/:path*'],
   eslint: {
     ignoreDuringBuilds: true,
   },
