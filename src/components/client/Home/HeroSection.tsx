@@ -61,7 +61,7 @@ export default function HeroSection() {
                 Nestor
               </span>
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-                COMPAORE ,
+                COMPAORE
               </span>
               <br />
               <AnimatedText text="Spécialiste en Solutions Numériques." />
