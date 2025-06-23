@@ -252,7 +252,7 @@ export default function AboutPage() {
               <div className="absolute -inset-3 border-2 border-blue-400/50 rounded-xl rotate-2 transition-transform duration-300 group-hover:rotate-1 group-hover:border-blue-400"></div>
               <div className="relative bg-gradient-to-br from-blue-900/80 to-amber-900/80 rounded-xl overflow-hidden border border-gray-700 aspect-square">
                 <div className="h-full w-full flex items-center justify-center">
-                  <Image src='/images/pp.png' alt='photo de profile' width={300} height={300} />
+                  <Image src='/images/pr.png' alt='photo de profile' width={300} height={300} />
                 </div>
               </div>
             </motion.div>

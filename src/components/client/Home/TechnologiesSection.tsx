@@ -59,7 +59,7 @@ const technologies = [
     items: ["Version Control", "Collaboration", "Actions"]
   },
   { 
-    name: "QT/Tkinter", 
+    name: "QT/Tkinter/Electron", 
     category: "Desktop", 
     icon: <Paintbrush className="w-6 h-6 text-teal-400" />,
     items: ["GUI Development", "Cross-platform", "Python Bindings"]

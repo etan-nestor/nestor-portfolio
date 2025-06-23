@@ -22,7 +22,7 @@ export default function CtaSection() {
             Que vous ayez une idée précise ou juste une ébauche, je peux vous aider à la concrétiser avec une solution sur mesure.
           </p>
           <Link
-            href="#contact"
+            href="/client/ask"
             className="inline-flex px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all group"
           >
             <span>Commencer maintenant</span>

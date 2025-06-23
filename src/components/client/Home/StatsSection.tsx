@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { Rocket, Award, Users, Globe } from 'lucide-react'
 
 const stats = [
-  { value: "10+", label: "Projets réalisés", icon: <Rocket className="w-6 h-6" /> },
-  { value: "90%", label: "Clients satisfaits", icon: <Award className="w-6 h-6" /> },
+  { value: "25+", label: "Projets réalisés", icon: <Rocket className="w-6 h-6" /> },
+  { value: "85%", label: "Clients satisfaits", icon: <Award className="w-6 h-6" /> },
   { value: "4+", label: "Années d'expérience", icon: <Users className="w-6 h-6" /> },
   { value: "∞", label: "Passion", icon: <Globe className="w-6 h-6" /> }
 ]

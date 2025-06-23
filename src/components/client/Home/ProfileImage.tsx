@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Code, FolderKanban, PenTool, Presentation } from 'lucide-react'
-import profile from '../../../../public/images/profile1.png'
 
 export default function ProfileImage() {
   const badges = [
@@ -80,15 +79,15 @@ export default function ProfileImage() {
       transition={{ delay: 1.1, type: 'spring' }}
       className="lg:w-1/2 flex justify-center"
     >
-      <div className="relative">
+      <div className="relative mb-12">
         {/* Conteneur de l'image de profil */}
         <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-blue-900/20 border border-blue-600/30 flex items-center justify-center overflow-hidden shadow-2xl">
-          <div className="w-[95%] h-[95%] rounded-full bg-gray-800/50 flex items-center justify-center overflow-hidden border border-gray-700/50">
+          <div className="w-[95%] h-[85%] rounded-full bg-gray-800/50 flex items-center justify-center overflow-hidden border border-gray-700/50">
             <Image
-              src={profile}
+              src='/images/pr.png'
               alt="Photo de profil"
-              width={320}
-              height={320}
+              width={280}
+              height={200}
               className="object-cover scale-110"
               priority
             />
