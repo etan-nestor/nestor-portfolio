@@ -3,121 +3,55 @@
 import { Pagination } from '@/components/client/Paginations'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, ExternalLink, Github, MoveRight, Eye, CodeIcon, Database, Smartphone, Globe, Figma } from 'lucide-react'
+import { ArrowRight, ExternalLink, Github, MoveRight, Eye, Smartphone, Globe, Figma, ScreenShare, Badge } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getProjects } from '@/services/projects.service'
 
 const PROJECTS_PER_PAGE = 6
-
-const projects = [
-  {
-    id: 3,
-    title: "OpenNumeric - Site Corporatif",
-    description: "Site vitrine et plateforme de services pour mon entreprise OpenNumeric.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion", "Figma"],
-    image: "/images/opennumeric_preview.png",
-    github: "#",
-    live: "#",
-    category: "Web",
-    client: "OpenNumeric"
-  },
-  {
-    id: 1,
-    title: "Visualisation des Sorties de Modèles Météo",
-    description: "Application web pour visualiser les données de prévisions météorologiques générées par des supercalculateurs.",
-    tags: ["React", "Express.js", "MySQL", "Data Visualization", "Linux CLI"],
-    image: "/images/Eduflow.png",
-    github: "#",
-    live: "#",
-    category: "Web",
-    client: "ANAM (Agence Nationale de la Météorologie)"
-  },
-  {
-    id: 2,
-    title: "Analyse des Résultats PMUB",
-    description: "Plateforme d'analyse des résultats de pronostics pour les clients de Noticom Holding.",
-    tags: ["Python", "Data Analysis", "SQL", "Reporting"],
-    image: "/images/ResumePro.png",
-    github: "#",
-    live: "#",
-    category: "Data",
-    client: "Noticom Holding"
-  },
-  {
-    id: 4,
-    title: "Application Mobile de Gestion",
-    description: "Solution mobile pour la gestion des interventions techniques sur le terrain.",
-    tags: ["React Native", "Firebase", "Ionic", "UI/UX"],
-    image: "/images/opennumeric_preview.png",
-    github: "#",
-    live: "#",
-    category: "Mobile",
-    client: "Freelance"
-  },
-  {
-    id: 5,
-    title: "Dashboard Micro-crédit JUMO",
-    description: "Tableau de bord analytique pour le projet Micro-crédit chez Orange Burkina.",
-    tags: ["Node.js", "React", "MongoDB", "Data Visualization"],
-    image: "/images/opennumeric_preview.png",
-    github: "#",
-    live: "#",
-    category: "Web",
-    client: "Orange Burkina"
-  },
-  {
-    id: 6,
-    title: "Coffre Fort Numérique",
-    description: "Solution sécurisée de stockage de documents sensibles avec cryptage.",
-    tags: ["Django", "PostgreSQL", "AWS S3", "Cryptographie"],
-    image: "/images/opennumeric_preview.png",
-    github: "#",
-    live: "#",
-    category: "Fullstack",
-    client: "Orange Burkina"
-  },
-  {
-    id: 7,
-    title: "Plateforme E-learning",
-    description: "Système de gestion de cours en ligne avec suivi des progrès.",
-    tags: ["Laravel", "Vue.js", "MySQL", "SCORM"],
-    image: "/images/opennumeric_preview.png",
-    github: "#",
-    live: "#",
-    category: "Web",
-    client: "Freelance"
-  },
-  {
-    id: 8,
-    title: "API de Paiement",
-    description: "Solution d'intégration de paiement pour applications mobiles.",
-    tags: ["Node.js", "GraphQL", "MongoDB", "Stripe API"],
-    image: "/images/opennumeric_preview.png",
-    github: "#",
-    live: "#",
-    category: "Fullstack",
-    client: "Startup X"
-  }
-]
 
 const categories = [
   { name: "Tous", icon: <Eye size={16} /> },
   { name: "Web", icon: <Globe size={16} /> },
   { name: "Mobile", icon: <Smartphone size={16} /> },
-  { name: "Fullstack", icon: <CodeIcon size={16} /> },
+  { name: "Desktop", icon: <ScreenShare size={16} /> },
   { name: "Design", icon: <Figma size={16} /> },
-  { name: "Data", icon: <Database size={16} /> }
+  { name: "Autres", icon: <Badge size={16} /> }
 ]
+
+// Fonction pour déterminer la couleur du statut
+const getStatusColor = (status: string) => {
+  switch (status.toLowerCase()) {
+    case 'terminé':
+      return 'bg-green-600/20 text-green-400'
+    case 'en cours':
+      return 'bg-blue-600/20 text-blue-400'
+    case 'arrêté':
+      return 'bg-red-600/20 text-red-400'
+    default:
+      return 'bg-gray-600/20 text-gray-400'
+  }
+}
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("Tous")
   const [currentPage, setCurrentPage] = useState(1)
+  const [projects, setProjects] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const filteredProjects = activeCategory === "Tous"
-    ? projects
-    : projects.filter(project => project.category === activeCategory)
+  useEffect(() => {
+    const fetchProjects = async () => {
+      setLoading(true)
+      const projectsData = await getProjects(activeCategory === "Tous" ? undefined : activeCategory)
+      setProjects(projectsData)
+      setLoading(false)
+    }
+
+    fetchProjects()
+  }, [activeCategory])
 
   // Pagination logic
+  const filteredProjects = projects
   const totalPages = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE)
   const paginatedProjects = filteredProjects.slice(
     (currentPage - 1) * PROJECTS_PER_PAGE,
@@ -187,7 +121,11 @@ export default function Projects() {
 
       {/* Grille de projets */}
       <section className="max-w-6xl mx-auto mb-12">
-        {paginatedProjects.length > 0 ? (
+        {loading ? (
+          <div className="text-center py-12">
+            <p className="text-gray-500">Chargement des projets...</p>
+          </div>
+        ) : paginatedProjects.length > 0 ? (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6">
               {paginatedProjects.map((project, index) => (
@@ -217,11 +155,12 @@ export default function Projects() {
                         alt={project.title}
                         width={400}
                         height={300}
+                        className="object-cover"
                       />
                     </motion.div>
                     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 to-transparent z-20">
                       <div className="flex flex-wrap gap-1.5">
-                        {project.tags.slice(0, 3).map((tag) => (
+                        {project.tags.slice(0, 3).map((tag: string) => (
                           <motion.span
                             key={tag}
                             className="px-2 py-1 bg-gray-800/80 text-xs rounded-full text-blue-300 backdrop-blur-sm"
@@ -247,19 +186,6 @@ export default function Projects() {
                         <p className="text-xs text-gray-500 mt-1">Pour {project.client}</p>
                       </div>
                       <div className="flex gap-2 ml-3">
-                        {project.github && (
-                          <motion.a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
-                            whileHover={{ scale: 1.2 }}
-                            whileTap={{ scale: 0.9 }}
-                            title="Code source"
-                          >
-                            <Github size={18} />
-                          </motion.a>
-                        )}
                         {project.live && (
                           <motion.a
                             href={project.live}
@@ -275,18 +201,27 @@ export default function Projects() {
                         )}
                       </div>
                     </div>
+                    
+                    {/* Ajout du statut et du type */}
+                    <div className="flex gap-2 mb-3">
+                      {project.status && (
+                        <span className={`px-3 py-1 text-xs rounded-full ${getStatusColor(project.status)}`}>
+                          {project.status}
+                        </span>
+                      )}
+                      {project.type && (
+                        <span className="px-3 py-1 text-xs rounded-full bg-purple-600/20 text-purple-400">
+                          {project.type}
+                        </span>
+                      )}
+                    </div>
+                    
                     <p className="text-gray-400 text-sm sm:text-base mb-4 line-clamp-3 flex-grow">{project.description}</p>
                     <motion.div
                       whileHover={{ x: 5 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                       className="mt-auto"
                     >
-                      <Link
-                        href={`/projects/${project.id}`}
-                        className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm sm:text-base"
-                      >
-                        Voir les détails <MoveRight className="ml-2 w-4 h-4" />
-                      </Link>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -332,17 +267,17 @@ export default function Projects() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/contact"
+              href="/client/ask"
               className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium text-base sm:text-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all group flex-1"
             >
               <span>Discutons de votre projet</span>
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/about#freelance"
+              href="/client/contact"
               className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-gray-800 border border-gray-700 rounded-lg font-medium text-base sm:text-lg hover:bg-gray-700 transition-all flex-1"
             >
-              <span>Voir mes services</span>
+              <span>Me contacter</span>
             </Link>
           </div>
         </motion.div>

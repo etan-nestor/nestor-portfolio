@@ -1,10 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Navbar from '@/components/client/Navbar/page'
 import LoadingScreen from '@/components/client/Loading/LoadingScreen'
-import Footer from '@/components/client/Footer/page'
 import { Metadata } from 'next'
-import CurrentJobModal from '@/components/client/Home/CurrentJobModal'
 
 export const metadata: Metadata = {
   title: "Nestor COMPAORE",
@@ -22,12 +19,7 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <body className={`${inter.className} bg-gray-950 text-gray-100`}>
         <LoadingScreen />
-        <Navbar />
-        <main>
           {children}
-        </main>
-        <Footer />
-        <CurrentJobModal />
       </body>
     </html>
   )
