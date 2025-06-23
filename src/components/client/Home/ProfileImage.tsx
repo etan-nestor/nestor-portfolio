@@ -77,7 +77,7 @@ export default function ProfileImage() {
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.1, type: 'spring' }}
-      className="lg:w-1/2 flex justify-center"
+      className="hidden lg:flex lg:w-1/2 justify-center"
     >
       <div className="relative mb-12">
         {/* Conteneur de l'image de profil */}

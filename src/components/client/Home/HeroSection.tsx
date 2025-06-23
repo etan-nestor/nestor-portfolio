@@ -9,7 +9,7 @@ import ProfileImage from './ProfileImage'
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-0">
+    <section id="home" className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center relative overflow-hidden -pt-24 md:pt-0">
       <motion.div 
         className="absolute inset-0 z-0"
         initial={{ opacity: 0 }}
