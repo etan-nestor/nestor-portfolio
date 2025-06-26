@@ -3,6 +3,7 @@
 [![Live Demo](https://img.shields.io/badge/LIVE_DEMO-nestor.opennumeric.com-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://nestor.opennumeric.com)
 [![Next.js](https://img.shields.io/badge/Next.js-15.3.2-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 Portfolio moderne développé avec les dernières technologies web, mettant en valeur mon expertise en développement frontend.
 
@@ -22,6 +23,11 @@ Portfolio moderne développé avec les dernières technologies web, mettant en v
 | ![Desktop Version](https://github.com/etan-nestor/audio-files/raw/main/desktop-1.png) | ![Mobile Version](https://github.com/etan-nestor/audio-files/raw/main/mob-1.png) | ![Tablet Version](https://github.com/etan-nestor/audio-files/raw/main/tab-1.png) |
 
 *(Cliquez sur les images pour agrandir)*
+
+## 📜 License
+
+MIT © [Nestor Compaoré](https://nestor.opennumeric.com)
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ## 🛠 Stack Technique
 
