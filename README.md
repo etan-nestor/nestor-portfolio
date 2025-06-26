@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Professionnel - Nestor Compaoré
 
-## Getting Started
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-nestor.opennumeric.com-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://nestor.opennumeric.com)
+[![Next.js](https://img.shields.io/badge/Next.js-15.3.2-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
 
-First, run the development server:
+Portfolio moderne développé avec les dernières technologies web, mettant en valeur mon expertise en développement frontend.
 
+## 🌟 Fonctionnalités clés
+
+- 🚀 **Next.js 15.3** avec App Router
+- 🔥 **Firebase** pour l'hébergement et les services backend
+- ✨ **Animations fluides** avec Framer Motion
+- 🎨 **Design élégant** avec Tailwind CSS
+- 📱 **Responsive parfait** sur tous les appareils
+- ⚡ **Performances optimisées** (scores Lighthouse >95)
+
+## 🖥 Aperçu du site
+
+| Desktop | Mobile |
+|---------|--------|
+| ![Desktop Version](https://nestor.opennumeric.com/screenshot/desktop.png) | ![Mobile Version](https://nestor.opennumeric.com/screenshot/mob.png) |
+
+*(Cliquez sur les images pour agrandir)*
+
+## 🛠 Stack Technique
+
+### Frontend
+- **Framework**: Next.js 15.3.2
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Typographie**: Geist (by Vercel)
+
+### Backend & Hébergement
+- **Hébergement**: Vercel
+- **Database**: Firebase Firestore
+- **Authentication**: Firebase Auth
+- **Analytics**: Google Analytics
+
+## 🚀 Déploiement
+
+Le site est actuellement déployé sur Vercel et accessible via :
+[https://nestor.opennumeric.com](https://nestor.opennumeric.com)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/votre-repo)
+
+## 📦 Installation locale
+
+1. **Cloner le dépôt**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/etan-nestor/nestor-portfolio.git
+cd nestor-portfolio
