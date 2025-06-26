@@ -17,8 +17,8 @@ Portfolio moderne développé avec les dernières technologies web, mettant en v
 
 ## 🖥 Aperçu du site
 
-| Desktop | Mobile |
-|---------|--------|
+| Desktop | Mobile | Tablet |
+|---------|--------|--------|        
 | ![Desktop Version](https://github.com/etan-nestor/audio-files/raw/main/desktop-1.png) | ![Mobile Version](https://github.com/etan-nestor/audio-files/raw/main/mob-1.png) | ![Tablet Version](https://github.com/etan-nestor/audio-files/raw/main/tab-1.png) |
 
 *(Cliquez sur les images pour agrandir)*
