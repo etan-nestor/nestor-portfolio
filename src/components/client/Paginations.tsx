@@ -37,7 +37,7 @@ export function Pagination({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className={`flex items-center justify-center gap-1 ${className}`}
+      className={`flex items-center justify-center gap-0.5 sm:gap-1 ${className}`}
     >
       {/* Previous Button */}
       <motion.button
@@ -45,9 +45,13 @@ export function Pagination({
         disabled={currentPage === 1}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`p-2 rounded-lg ${currentPage === 1 ? 'text-gray-600 cursor-not-allowed' : 'text-blue-400 hover:bg-blue-900/20'}`}
+        className={`p-1 sm:p-1.5 rounded-lg ${
+          currentPage === 1 
+            ? 'text-gray-600 cursor-not-allowed' 
+            : 'text-blue-400 hover:bg-blue-900/20'
+        }`}
       >
-        <ChevronLeft className="w-5 h-5" />
+        <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
       </motion.button>
 
       {/* First Page */}
@@ -59,8 +63,8 @@ export function Pagination({
             onClick={() => onPageChange(1)}
           />
           {startPage > 2 && (
-            <div className="px-2 text-gray-500">
-              <MoreHorizontal className="w-4 h-4" />
+            <div className="px-1 sm:px-2 text-gray-500">
+              <MoreHorizontal className="w-3 h-3 sm:w-4 sm:h-4" />
             </div>
           )}
         </>
@@ -80,8 +84,8 @@ export function Pagination({
       {endPage < totalPages && (
         <>
           {endPage < totalPages - 1 && (
-            <div className="px-2 text-gray-500">
-              <MoreHorizontal className="w-4 h-4" />
+            <div className="px-1 sm:px-2 text-gray-500">
+              <MoreHorizontal className="w-3 h-3 sm:w-4 sm:h-4" />
             </div>
           )}
           <PageButton 
@@ -98,9 +102,13 @@ export function Pagination({
         disabled={currentPage === totalPages}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`p-2 rounded-lg ${currentPage === totalPages ? 'text-gray-600 cursor-not-allowed' : 'text-blue-400 hover:bg-blue-900/20'}`}
+        className={`p-1 sm:p-1.5 rounded-lg ${
+          currentPage === totalPages 
+            ? 'text-gray-600 cursor-not-allowed' 
+            : 'text-blue-400 hover:bg-blue-900/20'
+        }`}
       >
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
       </motion.button>
     </motion.div>
   )
@@ -116,9 +124,9 @@ function PageButton({ page, currentPage, onClick }: {
       onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+      className={`w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 flex items-center justify-center rounded-lg text-xs sm:text-sm font-medium transition-colors ${
         page === currentPage
-          ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30'
+          ? 'bg-gradient-to-br from-blue-600 to-purple-600 text-white shadow-md sm:shadow-lg shadow-blue-500/20 sm:shadow-blue-500/30'
           : 'text-gray-400 hover:bg-gray-800'
       }`}
     >

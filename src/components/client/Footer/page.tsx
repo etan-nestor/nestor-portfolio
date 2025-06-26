@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { ChevronUp, Github, Linkedin, Mail, Twitter, ArrowUpRight } from 'lucide-react'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const socialLinks = [
@@ -153,7 +152,7 @@ export default function Footer() {
                     whileHover={{ 
                       scale: 1.1,
                       color: '#60a5fa',
-                      rotate: [0, 5, -5, 0]
+                      rotate: 5
                     }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ type: 'spring' }}

@@ -14,16 +14,16 @@ export default function ContactForm() {
     // Ici vous pouvez ajouter la logique pour envoyer le formulaire
   };
 
-   const inputClasses = "w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition text-white z-10 relative"
+  const inputClasses = "w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition text-white text-sm sm:text-base"
 
   return (
     <motion.form 
       onSubmit={handleSubmit(onSubmit)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="space-y-6 bg-gray-900/70 p-8 rounded-xl border border-gray-800 shadow-xl z-10"
+      className="space-y-4 sm:space-y-6 bg-gray-900/70 p-4 sm:p-6 md:p-8 rounded-xl border border-gray-800 shadow-xl w-full"
     >
-      <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+      <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-3">
         <span className="bg-gradient-to-r from-blue-400 to-amber-400 bg-clip-text text-transparent">
           Envoyez un message
         </span>
@@ -33,10 +33,10 @@ export default function ContactForm() {
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.2 }}
-        className="space-y-2"
+        className="space-y-1 sm:space-y-2"
       >
-        <label htmlFor="name" className="flex items-center gap-2 text-sm font-medium text-gray-300">
-          <User className="w-4 h-4 text-blue-400" />
+        <label htmlFor="name" className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
+          <User className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
           Nom complet
         </label>
         <input
@@ -46,17 +46,17 @@ export default function ContactForm() {
           placeholder="Votre nom complet"
           style={{ pointerEvents: 'auto' }}
         />
-        {errors.name && <p className="text-amber-400 text-sm mt-1">{(errors.name as any).message}</p>}
+        {errors.name && <p className="text-amber-400 text-xs sm:text-sm mt-1">{(errors.name as any).message}</p>}
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3 }}
-        className="space-y-2"
+        className="space-y-1 sm:space-y-2"
       >
-        <label htmlFor="email" className="flex items-center gap-2 text-sm font-medium text-gray-300">
-          <Mail className="w-4 h-4 text-blue-400" />
+        <label htmlFor="email" className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
+          <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
           Email
         </label>
         <input
@@ -72,27 +72,27 @@ export default function ContactForm() {
           className={inputClasses}
           placeholder="votre@email.com"
         />
-        {errors.email && <p className="text-amber-400 text-sm mt-1">{(errors.email as any).message}</p>}
+        {errors.email && <p className="text-amber-400 text-xs sm:text-sm mt-1">{(errors.email as any).message}</p>}
       </motion.div>
 
       <motion.div
         initial={{ opacity: 0, x: -10 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.4 }}
-        className="space-y-2"
+        className="space-y-1 sm:space-y-2"
       >
-        <label htmlFor="message" className="flex items-center gap-2 text-sm font-medium text-gray-300">
-          <MessageSquare className="w-4 h-4 text-blue-400" />
+        <label htmlFor="message" className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-300">
+          <MessageSquare className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
           Message
         </label>
         <textarea
           id="message"
-          rows={5}
+          rows={4}
           {...register('message', { required: 'Ce champ est requis' })}
           className={inputClasses}
           placeholder="Votre message..."
         />
-        {errors.message && <p className="text-amber-400 text-sm mt-1">{(errors.message as any).message}</p>}
+        {errors.message && <p className="text-amber-400 text-xs sm:text-sm mt-1">{(errors.message as any).message}</p>}
       </motion.div>
 
       <motion.button
@@ -103,7 +103,7 @@ export default function ContactForm() {
         transition={{ delay: 0.5 }}
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-medium text-white hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+        className="w-full py-2 sm:py-3 px-4 sm:px-6 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg font-medium text-white hover:opacity-90 transition-opacity flex items-center justify-center gap-2 text-sm sm:text-base"
       >
         {isSubmitting ? (
           <>

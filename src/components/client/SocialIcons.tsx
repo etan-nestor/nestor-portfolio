@@ -6,26 +6,26 @@ export default function SocialIcons() {
   const socials = [
     {
       name: 'LinkedIn',
-      icon: <Linkedin className="w-5 h-5" />,
+      icon: <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />,
       url: '#',
       color: 'bg-blue-600 hover:bg-blue-700'
     },
     {
       name: 'GitHub',
-      icon: <Github className="w-5 h-5" />,
+      icon: <Github className="w-4 h-4 sm:w-5 sm:h-5" />,
       url: '#',
       color: 'bg-gray-700 hover:bg-gray-600'
     },
     {
       name: 'Twitter',
-      icon: <Twitter className="w-5 h-5" />,
+      icon: <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />,
       url: '#',
       color: 'bg-sky-500 hover:bg-sky-600'
     }
   ];
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-2 sm:gap-3">
       {socials.map((social, index) => (
         <motion.a
           key={index}
@@ -37,7 +37,7 @@ export default function SocialIcons() {
           transition={{ delay: 0.8 + index * 0.1 }}
           whileHover={{ y: -3 }}
           whileTap={{ scale: 0.9 }}
-          className={`p-2.5 rounded-full text-white transition ${social.color}`}
+          className={`p-2 sm:p-2.5 rounded-full text-white transition ${social.color}`}
           aria-label={social.name}
         >
           {social.icon}

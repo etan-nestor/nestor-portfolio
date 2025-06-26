@@ -189,7 +189,7 @@ export default function SkillsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-20" ref={ref}>
-      <div className="flex items-center gap-3 mb-16">
+      <div className="flex items-center gap-3 mb-5 mt-8 lg:mt-5">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -199,7 +199,7 @@ export default function SkillsPage() {
         </motion.div>
         <AnimatedText 
           text="Expertise & Compétences" 
-          className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600"
+          className="text-3xl md:text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-600"
         />
       </div>
 
@@ -464,5 +464,6 @@ export default function SkillsPage() {
         <div className="absolute top-2/3 right-2/3 w-96 h-96 rounded-full bg-indigo-900/10 blur-3xl"></div>
       </div>
     </div>
+
   );
 }

@@ -75,9 +75,6 @@ export default function ServicesSection() {
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white">{service.title}</h3>
               <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">{service.description}</p>
-              <Link href="#contact" className="text-blue-400 flex items-center gap-2 group-hover:text-blue-300 transition-colors text-sm sm:text-base">
-                En savoir plus <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </motion.div>
           ))}
         </div>
