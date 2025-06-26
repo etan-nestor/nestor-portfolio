@@ -7,22 +7,22 @@ import { useEffect, useState } from 'react'
 
 const socialLinks = [
   { 
-    icon: <Github size={20} />, 
+    icon: <Github size={16} className="sm:w-5 sm:h-5" />, 
     href: 'https://github.com',
     name: 'GitHub'
   },
   { 
-    icon: <Linkedin size={20} />, 
+    icon: <Linkedin size={16} className="sm:w-5 sm:h-5" />, 
     href: 'https://linkedin.com',
     name: 'LinkedIn'
   },
   { 
-    icon: <Twitter size={20} />, 
+    icon: <Twitter size={16} className="sm:w-5 sm:h-5" />, 
     href: 'https://twitter.com',
     name: 'Twitter'
   },
   { 
-    icon: <Mail size={20} />, 
+    icon: <Mail size={16} className="sm:w-5 sm:h-5" />, 
     href: 'mailto:contact@example.com',
     name: 'Email'
   },
@@ -46,26 +46,26 @@ export default function Footer() {
     >
       {/* Effet de particules */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-blue-500/10"
             initial={{
               x: Math.random() * 100,
               y: Math.random() * 100,
-              width: Math.random() * 5 + 1,
-              height: Math.random() * 5 + 1,
+              width: Math.random() * 3 + 1,
+              height: Math.random() * 3 + 1,
               opacity: 0
             }}
             animate={{
-              y: [null, Math.random() * 50 - 25],
+              y: [null, Math.random() * 30 - 15],
               opacity: [0, 0.3, 0],
             }}
             transition={{
-              duration: Math.random() * 15 + 10,
+              duration: Math.random() * 10 + 5,
               repeat: Infinity,
               repeatType: "reverse",
-              delay: Math.random() * 5
+              delay: Math.random() * 3
             }}
             style={{
               left: `${Math.random() * 100}%`,
@@ -75,17 +75,17 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 py-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
         {/* Section Entreprise */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+          className="mb-8 sm:mb-12 text-center"
         >
-          <div className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-gray-700 rounded-xl p-6 backdrop-blur-sm">
-            <h3 className="text-lg font-medium mb-2 flex items-center justify-center gap-2">
+          <div className="inline-block bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-gray-700 rounded-xl p-4 sm:p-6 backdrop-blur-sm">
+            <h3 className="text-sm sm:text-base font-medium mb-1 sm:mb-2 flex items-center justify-center gap-2">
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Fondateur de
               </span>
@@ -98,36 +98,36 @@ export default function Footer() {
                 href="https://opennumeric.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent flex items-center gap-2 group"
+                className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent flex items-center gap-1 sm:gap-2 group"
               >
                 Open Numeric
-                <ArrowUpRight className="w-5 h-5 text-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </a>
             </motion.div>
-            <p className="text-gray-400 mt-2 max-w-md mx-auto">
+            <p className="text-gray-400 mt-1 sm:mt-2 max-w-md mx-auto text-xs sm:text-sm">
               Votre partenaire pour des solutions digitales innovantes et performantes.
             </p>
           </div>
         </motion.div>
 
         <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Copyright avec effet de vague */}
+          {/* Copyright */}
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="mb-6 md:mb-0"
+            className="mb-4 sm:mb-6 md:mb-0"
           >
-            <p className="text-gray-400 text-sm relative group">
+            <p className="text-gray-400 text-xs sm:text-sm relative group">
               © {new Date().getFullYear()} Nestor Compaoré. Tous droits réservés.
               <span className="absolute bottom-0 left-0 w-0 h-px bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-500"></span>
             </p>
-            <p className="text-gray-500 text-xs mt-1">
+            <p className="text-gray-500 text-xxs sm:text-xs mt-1">
               Développé avec Next.js, Tailwind CSS et Framer Motion
             </p>
           </motion.div>
 
-          {/* Liens sociaux avec tooltip */}
-          <div className="flex space-x-6">
+          {/* Liens sociaux */}
+          <div className="flex space-x-3 sm:space-x-4 md:space-x-6">
             {socialLinks.map((link, index) => (
               <motion.div
                 key={index}
@@ -141,7 +141,7 @@ export default function Footer() {
                   damping: 10
                 }}
                 className="relative group"
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -3 }}
               >
                 <a
                   href={link.href}
@@ -151,17 +151,17 @@ export default function Footer() {
                 >
                   <motion.div
                     whileHover={{ 
-                      scale: 1.2,
+                      scale: 1.1,
                       color: '#60a5fa',
-                      rotate: [0, 10, -10, 0]
+                      rotate: [0, 5, -5, 0]
                     }}
                     whileTap={{ scale: 0.9 }}
                     transition={{ type: 'spring' }}
-                    className="p-3 bg-gray-800/50 rounded-full border border-gray-700 group-hover:border-blue-500/50 group-hover:bg-blue-900/20 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all"
+                    className="p-2 sm:p-3 bg-gray-800/50 rounded-full border border-gray-700 group-hover:border-blue-500/50 group-hover:bg-blue-900/20 group-hover:shadow-lg group-hover:shadow-blue-500/10 transition-all"
                   >
                     {link.icon}
                   </motion.div>
-                  <span className="absolute -bottom-6 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <span className="absolute -bottom-5 text-xxs sm:text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
                     {link.name}
                   </span>
                 </a>
@@ -170,9 +170,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Ligne de séparation animée */}
+        {/* Ligne de séparation */}
         <motion.div 
-          className="w-full h-px my-8 overflow-hidden"
+          className="w-full h-px my-6 sm:my-8 overflow-hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -191,18 +191,18 @@ export default function Footer() {
           />
         </motion.div>
 
-        {/* Bouton retour en haut sophistiqué */}
+        {/* Bouton retour en haut */}
         <div className="text-center">
           <motion.a
             href="#home"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-800/50 border border-gray-700 hover:border-blue-500 transition-all group relative overflow-hidden"
+            className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-800/50 border border-gray-700 hover:border-blue-500 transition-all group relative overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.7 }}
             whileHover={{ 
-              scale: 1.1,
-              boxShadow: '0 0 15px rgba(96, 165, 250, 0.5)'
+              scale: 1.05,
+              boxShadow: '0 0 10px rgba(96, 165, 250, 0.3)'
             }}
             whileTap={{ scale: 0.95 }}
           >
@@ -211,7 +211,7 @@ export default function Footer() {
             />
             <motion.div
               animate={{
-                y: [0, -5, 0]
+                y: [0, -3, 0]
               }}
               transition={{
                 duration: 2,
@@ -220,7 +220,7 @@ export default function Footer() {
               }}
             >
               <ChevronUp 
-                size={24} 
+                size={20} 
                 className="text-gray-400 group-hover:text-blue-400 transition-colors relative z-10" 
               />
             </motion.div>
@@ -228,9 +228,9 @@ export default function Footer() {
           </motion.a>
         </div>
 
-        {/* Signature discrète */}
+        {/* Signature */}
         <motion.p
-          className="text-center text-xs text-gray-600 mt-8"
+          className="text-center text-xxs sm:text-xs text-gray-600 mt-6 sm:mt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

@@ -12,10 +12,13 @@ export default function Particles() {
 
   if (!isClient) return null
 
+  // Réduire le nombre de particules sur mobile
+  const particleCount = typeof window !== 'undefined' && window.innerWidth < 640 ? 15 : 30
+
   return (
     <>
-      {[...Array(30)].map((_, i) => {
-        const size = Math.random() * 10 + 2
+      {[...Array(particleCount)].map((_, i) => {
+        const size = Math.random() * (typeof window !== 'undefined' && window.innerWidth < 640 ? 5 : 10) + 2
         return (
           <motion.div
             key={i}

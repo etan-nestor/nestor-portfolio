@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion'
 
-export default function AnimatedText({ text }: { text: string }) {
+export default function AnimatedText({ text, className = "" }: { text: string, className?: string }) {
   return (
     <motion.span 
-      className="inline-block"
+      className={`inline-block ${className}`}
       animate={{
         backgroundPosition: ['0%', '100%'],
       }}

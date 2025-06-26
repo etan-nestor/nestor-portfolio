@@ -10,32 +10,32 @@ const navItems = [
   {
     name: 'Accueil',
     href: '/',
-    icon: <Home size={18} />
+    icon: <Home size={20} />
   },
   {
     name: 'Projets',
     href: '/client/projects',
-    icon: <Folder size={18} />
+    icon: <Folder size={20} />
   },
   {
     name: 'Expériences',
     href: '/client/experiences',
-    icon: <BriefcaseBusiness size={18} />
+    icon: <BriefcaseBusiness size={20} />
   },
   {
     name: 'Compétences',
     href: '/client/skills',
-    icon: <Code2 size={18} />
+    icon: <Code2 size={20} />
   },
   {
     name: 'À propos',
     href: '/client/about',
-    icon: <User size={18} />
+    icon: <User size={20} />
   },
   {
     name: 'Contact',
     href: '/client/contact',
-    icon: <Mail size={18} />
+    icon: <Mail size={20} />
   },
 ]
 
@@ -44,6 +44,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const downloadCV = () => {
     const cvUrl = './docs/Nestor-COMPAORE.pdf'
@@ -62,7 +69,7 @@ export default function Navbar() {
       transition={{ type: 'spring', stiffness: 100 }}
       className={`fixed w-full z-50 ${scrolled ? 'bg-gray-900/95 backdrop-blur-lg border-b border-gray-800' : 'bg-gray-900/90 backdrop-blur-md'}`}
     >
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex justify-between items-center">
           {/* Logo animé */}
           <motion.div
@@ -72,7 +79,7 @@ export default function Navbar() {
           >
             <Link href="/" className="flex items-center">
               <motion.div
-                className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-blue-700 flex items-center justify-center shadow-lg"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-orange-500 to-blue-700 flex items-center justify-center shadow-lg"
                 animate={{
                   rotate: [0, 5, -5, 0],
                   boxShadow: [
@@ -89,7 +96,7 @@ export default function Navbar() {
                 }}
               >
                 <motion.span
-                  className="text-white font-bold text-lg"
+                  className="text-white font-bold text-lg sm:text-xl"
                   animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.9, 1, 0.9]
@@ -103,20 +110,12 @@ export default function Navbar() {
                   NC
                 </motion.span>
               </motion.div>
-              <motion.span 
-                className="ml-2 text-white font-medium hidden md:block"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Portfolio
-              </motion.span>
             </Link>
           </motion.div>
 
           <div className="flex items-center gap-4">
             {/* Navigation Desktop */}
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -127,7 +126,7 @@ export default function Navbar() {
                     className={`flex items-center gap-2 transition-colors ${pathname === item.href ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <span className="text-sm font-medium">{item.name}</span>
+                    <span className="text-sm sm:text-base font-medium">{item.name}</span>
                   </motion.div>
                   
                   {pathname === item.href && (
@@ -157,7 +156,7 @@ export default function Navbar() {
             {/* Bouton Télécharger CV */}
             <motion.button
               onClick={downloadCV}
-              className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm font-medium relative overflow-hidden group"
+              className="hidden lg:flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 text-white text-sm sm:text-base font-medium relative overflow-hidden group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -170,7 +169,7 @@ export default function Navbar() {
                   }
                 }}
               >
-                <Download size={18} />
+                <Download size={20} />
               </motion.span>
               <span>CV</span>
               <motion.div 
@@ -181,11 +180,11 @@ export default function Navbar() {
             {/* Bouton mobile */}
             <motion.button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800"
+              className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </motion.button>
           </div>
         </div>
@@ -201,21 +200,21 @@ export default function Navbar() {
                 transition: { type: 'spring', damping: 25 }
               }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden"
+              className="lg:hidden overflow-hidden"
             >
-              <div className="pt-4 pb-2 space-y-1">
+              <div className="pt-4 pb-2 space-y-2">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${pathname === item.href ? 'bg-blue-900/30 text-blue-400' : 'text-gray-300 hover:bg-gray-800'}`}
+                    className={`flex items-center gap-4 px-4 py-4 text-lg rounded-lg transition-colors ${pathname === item.href ? 'bg-blue-900/30 text-blue-400' : 'text-gray-300 hover:bg-gray-800'}`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.icon}
-                    <span>{item.name}</span>
+                    <span className="text-xl">{item.name}</span>
                     {pathname === item.href && (
                       <motion.div 
-                        className="ml-auto w-2 h-2 rounded-full bg-blue-500"
+                        className="ml-auto w-3 h-3 rounded-full bg-blue-500"
                         animate={{
                           scale: [1, 1.5, 1],
                           opacity: [0.6, 1, 0.6]
@@ -231,10 +230,10 @@ export default function Navbar() {
 
                 <motion.button
                   onClick={downloadCV}
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white"
+                  className="w-full flex items-center gap-4 px-4 py-4 text-lg rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white"
                 >
-                  <Download size={18} />
-                  <span>Télécharger CV</span>
+                  <Download size={20} />
+                  <span className="text-xl">Télécharger CV</span>
                 </motion.button>
               </div>
             </motion.div>

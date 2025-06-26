@@ -9,7 +9,8 @@ import ProfileImage from './ProfileImage'
 
 export default function HeroSection() {
   return (
-    <section id="home" className="min-h-[calc(100vh-80px)] md:min-h-screen flex items-center justify-center relative overflow-hidden -pt-24 md:pt-0">
+    <section id="home" className="min-h-[calc(100vh-80px)] sm:min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-0">
+      {/* Background elements */}
       <motion.div 
         className="absolute inset-0 z-0"
         initial={{ opacity: 0 }}
@@ -33,16 +34,24 @@ export default function HeroSection() {
         />
       </motion.div>
 
+      {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12">
-          <div className="lg:w-1/2 mt-10 md:mt-0">
+        {/* Ordre modifié pour mobile - image d'abord */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8">
+          {/* Profile Image - en premier sur mobile */}
+          <div className="order-first lg:order-last lg:w-1/2 w-full flex justify-center lg:justify-end lg:mr-16 mt-2 mb-1 lg:mb-0">
+            <ProfileImage />
+          </div>
+
+          {/* Text content */}
+          <div className="lg:w-1/2 w-full mt-0 mb-4 lg:mt-0">
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7 }}
-              className="inline-block md:mt-12 mb-2 md:mb-1"
+              className="inline-block mb-3 sm:mb-4"
             >
-              <span className="text-blue-400 text-sm md:text-base font-mono px-3 py-1 md:px-4 md:py-2 bg-blue-900/20 rounded-full flex items-center gap-1 w-max">
+              <span className="text-blue-400 text-sm sm:text-base font-mono px-3 py-1 sm:px-4 sm:py-2 bg-blue-900/20 rounded-full flex items-center gap-2 w-max">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
@@ -51,55 +60,60 @@ export default function HeroSection() {
               </span>
             </motion.div>
             
+            {/* Title */}
             <motion.h1
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight"
+              className="text-4xl xs:text-5xl sm:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
             >
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 mr-3 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 to-blue-600 mr-2 sm:mr-3 bg-clip-text text-transparent">
                 Nestor
               </span>
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                 COMPAORE
               </span>
-              <br />
-              <AnimatedText text="Spécialiste en Solutions Numériques." />
+              <br className="hidden sm:block" />
+              <AnimatedText 
+                text="Spécialiste en Solutions Numériques." 
+                className="text-2xl xs:text-3xl sm:text-4xl mt-2 sm:mt-3"
+              />
             </motion.h1>
             
+            {/* Description */}
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9 }}
-              className="text-gray-400 mb-6 md:mb-8 max-w-lg text-base md:text-lg"
+              className="text-gray-400 mb-6 sm:mb-8 max-w-lg text-base sm:text-lg"
             >
               Je transforme vos idées en solutions digitales performantes avec un focus sur 
               l'innovation, l'expérience utilisateur et la qualité technique.
             </motion.p>
             
+            {/* Buttons */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1 }}
-              className="flex flex-wrap gap-3 md:gap-4"
+              className="flex flex-wrap gap-3 sm:gap-4"
             >
               <Link
                 href="/client/projects"
-                className="px-5 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg font-medium flex items-center gap-2 group hover:shadow-lg hover:shadow-blue-500/20 transition-all text-sm md:text-base"
+                className="px-5 py-3 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg font-medium flex items-center gap-2 group hover:shadow-lg hover:shadow-blue-500/20 transition-all text-sm sm:text-base w-full sm:w-auto justify-center"
               >
                 <span>Explorer mon travail</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/client/ask"
-                className="px-5 py-2 md:px-6 md:py-3 border border-blue-600/50 rounded-lg font-medium hover:bg-blue-900/20 hover:border-blue-600/80 hover:text-white transition-all text-sm md:text-base"
+                className="px-5 py-3 sm:px-6 sm:py-3 border border-blue-600/50 rounded-lg font-medium hover:bg-blue-900/20 hover:border-blue-600/80 hover:text-white transition-all text-sm sm:text-base w-full sm:w-auto text-center"
               >
                 Discutons de votre projet
               </Link>
             </motion.div>
           </div>
-
-          <ProfileImage />
+          
         </div>
       </div>
     </section>
