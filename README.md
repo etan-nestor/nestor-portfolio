@@ -19,7 +19,7 @@ Portfolio moderne développé avec les dernières technologies web, mettant en v
 
 | Desktop | Mobile |
 |---------|--------|
-| ![Desktop Version](https://nestor.opennumeric.com/screenshot/desktop.png) | ![Mobile Version](https://nestor.opennumeric.com/screenshot/mob.png) |
+| ![Desktop Version](https://github.com/etan-nestor/audio-files/raw/main/desktop-1.png) | ![Mobile Version](https://github.com/etan-nestor/audio-files/blob/main/mob-1.png) | ![Tablet Version](https://github.com/etan-nestor/audio-files/blob/main/tab-1.png) |
 
 *(Cliquez sur les images pour agrandir)*
 
@@ -43,7 +43,7 @@ Portfolio moderne développé avec les dernières technologies web, mettant en v
 Le site est actuellement déployé sur Vercel et accessible via :
 [https://nestor.opennumeric.com](https://nestor.opennumeric.com)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/votre-repo)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fetan-nestor%2Fnestor-portfolio)
 
 ## 📦 Installation locale
 
@@ -51,3 +51,16 @@ Le site est actuellement déployé sur Vercel et accessible via :
 ```bash
 git clone https://github.com/etan-nestor/nestor-portfolio.git
 cd nestor-portfolio
+
+##  Installation
+npm install
+
+# 3. Configurer Firebase
+cp .env.local
+# Remplir avec vos credentials Firebase
+
+# 4. Lancer le serveur
+npm run dev
+
+
+<div align="center"> <sub>Développé avec ❤️ par <a href="https://nestor.opennumeric.com">Nestor Compaoré</a> | <a href="https://opennumeric.com">Open Numeric</a></sub> </div> ```
