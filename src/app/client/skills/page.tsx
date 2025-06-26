@@ -66,29 +66,30 @@ export default function SkillsPage() {
 
   // Compétences professionnelles
   const professionalSkills = [
-    "Gestion de projet Agile",
+    "Gestion de projet ",
+    "Méthodologie iTTM, etc.",
     "Analyse des besoins clients",
-    "Rédaction de cahiers des charges",
+    "Rédaction de cahiers des charges, CI, etc.",
     "Architecture logicielle",
-    "Méthodologie iTTM",
     "Planification IT",
     "Conduite de réunion",
+    "Developpement Web & Mobile : TS/JS/Python + frameworks, etc.",
     "Formation technique"
   ];
 
   // Compétences techniques pratiques
   const practicalSkills = [
-    "Réparation d'imprimantes/photocopieuses",
-    "Installation de pilotes",
-    "Configuration réseau",
+    "Réparation d'imprimantes, photocopieuses, ordinateurs",
+    "Installation de pilotes, anti-virus, logiciels",
+    "Configuration réseau, imprimantes, photocopieuses",
     "Maintenance hardware",
     "Dépannage système"
   ];
 
   const languages = [
-    { name: "Français", level: 100, levelText: "Langue maternelle" },
-    { name: "Anglais", level: 70, levelText: "Technique professionnel" },
-    { name: "Espagnol", level: 40, levelText: "Notions" }
+    { name: "Mooré", level: 100, levelText: "Langue maternelle" },
+    { name: "Français", level: 75, levelText: "Courant" },
+    { name: "Anglais", level: 45, levelText: "Notions | Bases" },
   ];
 
   const softSkills = [
@@ -104,11 +105,11 @@ export default function SkillsPage() {
 
   const interests = [
     "Veille technologique",
-    "Open Source",
+    "Gestion de Projets",
     "Intelligence Artificielle",
     "Data Science",
     "Cybersécurité",
-    "Photographie",
+    "Design",
     "Mentorat",
     "Entrepreneuriat"
   ];

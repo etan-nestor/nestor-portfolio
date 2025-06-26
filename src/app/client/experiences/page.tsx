@@ -18,24 +18,23 @@ export default function ExperiencePage() {
   const experiences = [
     {
       id: 1,
-      role: "Chargé d'étude et d'ingénierie",
+      role: "Prestataire : Chargé d'étude et d'ingénierie",
       company: "Orange Burkina Faso",
       period: "Depuis le 26/06/2024",
       icon: <FileText className="w-5 h-5" />,
       description: [
-        "Mise en place d'architectures techniques pour solutions IT",
-        "Étude de faisabilité et analyse des besoins métiers",
-        "Rédaction de CDC, COVAL et documents techniques",
-        "Participation aux projets sécurité (Forensique, DDOS, Pentest, SOAR, WAF)",
-        "Gestion des projets Micro-crédit JUMO, Interopérabilité BECEAO",
-        "Méthodologie iTTM (Infrastructure Time To Market)",
-        "Planification et architecture des solutions IT"
+        "Conception d’architectures techniques adaptées aux besoins métiers, dans une logique de scalabilité, de sécurité et d’intégration aux infrastructures existantes.",
+        "Étude de faisabilité des solutions IT en amont des projets (T-1, T0, T1), avec analyse des enjeux techniques, fonctionnels, et budgétaires.",
+        "Recueil et formalisation des besoins via échanges avec les entités métier, rédaction de comptes rendus structurés et validation des hypothèses.",
+        "Rédaction de documents techniques et fonctionnels : CDC, COVAL, CI, rapports d’analyse,etc.",
+        "Utilisation de la méthode iTTM (Infrastructure Time To Market) pour cadrer et accélérer les projets d’infrastructure.",
+        "Appui technique à la sélection des solutions (benchmark, analyse de cohérence, relecture des offres techniques)."
       ],
-      technologies: ["Node.js", "React", "Docker", "CI/CD", "Architecture Cloud"]
+      technologies: ["Word", "Visio", "Draw.io", "Teams", "Outlook","Excel","PowerPoint","..."]
     },
     {
       id: 2,
-      role: "Prestataire en architecture et étude de projet",
+      role: "Stagiaire : Assistant en Informatique",
       company: "Noticom Holding (VAS PMUB)",
       period: "22/04/2024 - 22/06/2024",
       icon: <ClipboardCheck className="w-5 h-5" />,
@@ -45,20 +44,18 @@ export default function ExperiencePage() {
         "Gestion de base de données clients",
         "Reporting et analyse des performances"
       ],
-      technologies: ["Python", "SQL", "Data Analysis"]
+      technologies: ["Analyse de données", "Excel", "Reporting", "..."]
     },
     {
       id: 3,
-      role: "Développeur Fullstack",
+      role: "Stagiaire : Assistant et Développeur Web",
       company: "ANAM (Agence Nationale de la Météorologie)",
       period: "03/07/2023 - 03/10/2023",
       icon: <Code className="w-5 h-5" />,
       description: [
         "Développement d'une application de visualisation des sorties de modèles de prévision",
-        "Interface React avec visualisation cartographique",
-        "Backend Express.js avec API REST",
         "Interaction avec supercalculateur via commandes Linux",
-        "Optimisation des performances et expérience utilisateur"
+        "Controle de la conformité d'equipements recu (Ordinateurs ,etc.) "
       ],
       technologies: ["React", "Express.js", "MySQL", "Linux", "Data Visualization"]
     },
@@ -69,13 +66,14 @@ export default function ExperiencePage() {
       period: "2022 - Présent",
       icon: <Cpu className="w-5 h-5" />,
       description: [
-        "Développement d'applications web et mobiles sur mesure",
+        "Développement d'applications web, mobiles et des logiciels sur mesure",
         "Conception UI/UX avec Figma et Adobe Suite",
-        "Vente et maintenance de matériel informatique",
+        "Conception de logo , affiches , etc.",
+        "Vente d'ordinateurs etde matériels informatique",
+        "Dépannage et configuration de périphériques (imprimantes Canon,ordinateur,etc.)",
         "Consulting et formation technologique",
-        "Dépannage et configuration de périphériques (imprimantes Canon)"
       ],
-      technologies: ["React Native", "Ionic", "Django", "Figma", "UI/UX"]
+      technologies: ["React Native", "Ionic", "Django", "Figma", "UI/UX", "Canon","Nest","Next.js","..."]
     }
   ];
 

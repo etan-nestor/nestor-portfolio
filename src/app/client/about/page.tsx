@@ -29,29 +29,29 @@ export default function AboutPage() {
                   transition: { type: 'spring', stiffness: 300, damping: 25 }
                 }}
                 exit={{ y: 50, opacity: 0 }}
-                className="relative bg-gray-800 border border-gray-700 rounded-xl max-w-md w-full p-6 shadow-xl overflow-hidden mx-2"
+                className="relative max-w-2xl w-full rounded-xl border border-gray-700 shadow-xl overflow-hidden mx-2 max-h-[90vh] overflow-y-auto"
               >
                 <button
                   onClick={() => setShowFreelanceModal(false)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+                  className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10 bg-gray-800/80 rounded-full p-1"
                 >
                   <X className="w-6 h-6" />
                 </button>
 
-                <div className="space-y-5">
+                <div className="space-y-6 p-6 bg-gradient-to-br from-gray-800 to-gray-900">
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-amber-900/20 rounded-lg text-amber-400">
                       <Zap className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white mb-1">
+                      <h3 className="text-2xl font-bold text-white mb-1">
                         OpenNumeric - Mes Services
                       </h3>
                       <p className="text-amber-400 font-medium">Freelance & Entrepreneuriat</p>
                     </div>
                   </div>
 
-                  <div className="bg-gray-700/50 p-4 rounded-lg border border-gray-600">
+                  <div className="bg-gray-700/30 p-4 rounded-lg border border-gray-600/50">
                     <p className="text-gray-300">
                       En tant que fondateur d'OpenNumeric, je propose une gamme complète de services
                       technologiques pour répondre à vos besoins numériques.
@@ -60,23 +60,25 @@ export default function AboutPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {[
-                      { icon: <Code className="w-4 h-4" />, text: 'Développement Fullstack' },
-                      { icon: <Cpu className="w-4 h-4" />, text: 'Applications Web/Mobile' },
-                      { icon: <Paintbrush className="w-4 h-4" />, text: 'Design Graphique' },
-                      { icon: <Printer className="w-4 h-4" />, text: 'Vente Matériel IT' },
-                      { icon: <GitBranch className="w-4 h-4" />, text: 'Architecture Logicielle' },
-                      { icon: <FileText className="w-4 h-4" />, text: 'Conseil Technique' },
-                      { icon: <Users className="w-4 h-4" />, text: 'Formation & Mentorat' },
-                      { icon: <BookOpen className="w-4 h-4" />, text: 'Support Scolaire Informatique' }
+                      { icon: <Code className="w-4 h-4" />, text: 'Développement Fullstack', color: 'from-blue-900/30 to-blue-900/10' },
+                      { icon: <Cpu className="w-4 h-4" />, text: 'Applications Web/Mobile', color: 'from-purple-900/30 to-purple-900/10' },
+                      { icon: <Paintbrush className="w-4 h-4" />, text: 'Design Graphique', color: 'from-pink-900/30 to-pink-900/10' },
+                      { icon: <Printer className="w-4 h-4" />, text: 'Vente Matériel IT', color: 'from-red-900/30 to-red-900/10' },
+                      { icon: <GitBranch className="w-4 h-4" />, text: 'Architecture Logicielle', color: 'from-indigo-900/30 to-indigo-900/10' },
+                      { icon: <FileText className="w-4 h-4" />, text: 'Conseil Technique', color: 'from-cyan-900/30 to-cyan-900/10' },
+                      { icon: <Users className="w-4 h-4" />, text: 'Formation & Mentorat', color: 'from-emerald-900/30 to-emerald-900/10' },
+                      { icon: <BookOpen className="w-4 h-4" />, text: 'Support Scolaire Informatique', color: 'from-amber-900/30 to-amber-900/10' }
                     ].map((item, i) => (
                       <motion.div
                         key={i}
                         whileHover={{ y: -3 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 px-3 py-2 bg-gray-700 rounded-lg text-sm font-medium"
+                        className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium bg-gradient-to-br ${item.color} border border-gray-600/30 backdrop-blur-sm`}
                       >
-                        {item.icon}
-                        <span>{item.text}</span>
+                        <div className="text-white/90">
+                          {item.icon}
+                        </div>
+                        <span className="text-white/90">{item.text}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -102,10 +104,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Ingénieur des Travaux Informatiques spécialisé en développement fullstack et architecture logicielle.
-                Actuellement Chargé d'étude et d'ingénierie chez Orange Burkina Faso, je combine expertise technique
-                et gestion de projet pour créer des solutions innovantes. Passionné par les nouvelles technologies,
-                j'apprends constamment et partage mes connaissances.
+                Spécialiste en solutions numériques, je suis Ingénieur des Travaux Informatiques, expert en développement fullstack et en architecture logicielle. Actuellement Chargé d’étude et d’ingénierie chez Orange Burkina Faso, j’allie maîtrise technique et vision projet pour concevoir et déployer des solutions digitales innovantes. Curieux et passionné par les technologies émergentes, je cultive une démarche d’apprentissage continu et de partage de savoir.
               </p>
 
               {/* Objectifs */}
@@ -122,9 +121,9 @@ export default function AboutPage() {
                 <ul className="space-y-4">
                   {[
                     "Développer mon entreprise OpenNumeric pour offrir des solutions technologiques complètes",
-                    "Acquérir une expertise approfondie en architecture cloud et cybersécurité",
-                    "Contribuer à des projets innovants dans un environnement exigeant",
-                    "Partager mes connaissances à travers le mentorat et la formation"
+                    "Acquérir une expertise pointue en architecture cloud, cybersécurité et gestion de projet pour piloter des systèmes robustes et sécurisés.",
+                    "Contribuer activement à des projets innovants dans des environnements exigeants et à forte valeur ajoutée.",
+                    "Transmettre mon savoir et mon expérience via le mentorat et la formation, pour faire grandir les talents de demain."
                   ].map((item, i) => (
                     <motion.li
                       key={i}
@@ -153,10 +152,10 @@ export default function AboutPage() {
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    "Orange Burkina Faso - Chargé d'étude et d'ingénierie (2024-présent)",
-                    "Noticom Holding - Prestataire en architecture et étude de projet (2024)",
-                    "ANAM - Développeur Fullstack (Stage 2023)",
-                    "OpenNumeric - Fondateur & Freelance (2022-présent)"
+                    "Orange Burkina Faso - Prestataire : Chargé d'étude et d'ingénierie (Juillet 2024 - présent)",
+                    "Noticom Holding - Stagiaire : Assistant en informatique [Exploitation] (Mai 2024 - Juin 2024)",
+                    "ANAM - Stagiaire : Assistant & Developpeur web (Juillet 2023 - Octobre 2023)",
+                    "Freelance - Fondateur OpenNumeric & Freelancer (Depuis 2022)"
                   ].map((item, i) => (
                     <motion.li
                       key={i}
@@ -184,10 +183,13 @@ export default function AboutPage() {
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    "Licence Professionnelle en Informatique - IBAM",
-                    "Ingénieur des Travaux Informatiques",
-                    "Formation Fullstack Django - Orange Digital Center",
-                    "BAC C - Lycée Bogodogo (LBO)"
+                    "Licence Professionnelle en Informatique : Ingénieur des Travaux Informatiques - IBAM (Institut Burkinabè des Arts et Métiers)",
+                    "Formation en Cybersecurité et Sécurité Informatique - IBAM (Institut Burkinabè des Arts et Métiers)",
+                    "Formation Fullstack Django - ODC (Orange Digital Center)",
+                    "Formation Fullstack React Native - ODC (Orange Digital Center)",
+                    "Formation Outils Microsofts (Teams,Forms ,Outlook ,..) - Orange Burkina Faso",
+                    "Formations en ligne (Docker , Kubernetes, etc.)",
+                    "BAC Serie D - Lycée Bogodogo de Ouagadougou (LBO)"
                   ].map((item, i) => (
                     <motion.li
                       key={i}
@@ -216,10 +218,10 @@ export default function AboutPage() {
                 </h3>
                 <ul className="space-y-4">
                   {[
-                    "Encadrement d'élèves en mathématiques/informatique",
-                    "Dépannage informatique et maintenance hardware",
-                    "Création de designs graphiques (logos, affiches)",
-                    "Veille technologique et contribution open source"
+                    "Encadrement d'élèves en PC/mathématiques/informatique",
+                    "Dépannage informatique et maintenance hardware [Reparation , Configuration Photocopieuses & Imprimantes, Installation pilotes]",
+                    "Création de designs graphiques (logos, affiches,etc)",
+                    "Veille technologique - contribution open source et Formation Continue"
                   ].map((item, i) => (
                     <motion.li
                       key={i}
@@ -252,7 +254,7 @@ export default function AboutPage() {
               <div className="absolute -inset-3 border-2 border-blue-400/50 rounded-xl rotate-2 transition-transform duration-300 group-hover:rotate-1 group-hover:border-blue-400"></div>
               <div className="relative bg-gradient-to-br from-blue-900/80 to-amber-900/80 rounded-xl overflow-hidden border border-gray-700 aspect-square">
                 <div className="h-full w-full flex items-center justify-center">
-                  <Image src='/images/pr.png' alt='photo de profile' width={300} height={300} />
+                  <Image src='/images/pr.png' alt='photo de profile' width={1000} height={300} />
                 </div>
               </div>
             </motion.div>

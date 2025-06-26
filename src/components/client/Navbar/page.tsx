@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, Folder, Code2, User, Mail, Download } from 'lucide-react'
+import { Menu, X, Home, Folder, Code2, User, Mail, Download, BriefcaseBusiness } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
@@ -20,7 +20,7 @@ const navItems = [
   {
     name: 'Expériences',
     href: '/client/experiences',
-    icon: <Code2 size={18} />
+    icon: <BriefcaseBusiness size={18} />
   },
   {
     name: 'Compétences',

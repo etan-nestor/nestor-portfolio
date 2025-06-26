@@ -98,17 +98,6 @@ export default function LoadingScreen() {
                   }}
                 />
               </motion.div>
-              
-              {/* Texte */}
-              <motion.p 
-                className="mt-4 text-blue-100/80 flex items-center gap-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-              >
-                <Loader2 className="w-4 h-4 animate-spin" />
-                Chargement du portfolio...
-              </motion.p>
             </div>
           </motion.div>
         </motion.div>

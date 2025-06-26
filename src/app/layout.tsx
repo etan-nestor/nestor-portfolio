@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="fr" className="scroll-smooth">
       <body className={`${inter.className} bg-gray-950 text-gray-100`}>
         <LoadingScreen />
+        <main>
           {children}
+        </main>
       </body>
     </html>
   )
