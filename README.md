@@ -19,7 +19,7 @@ Portfolio moderne développé avec les dernières technologies web, mettant en v
 
 | Desktop | Mobile |
 |---------|--------|
-| ![Desktop Version](https://github.com/etan-nestor/audio-files/raw/main/desktop-1.png) | ![Mobile Version](https://github.com/etan-nestor/audio-files/blob/main/mob-1.png) | ![Tablet Version](https://github.com/etan-nestor/audio-files/blob/main/tab-1.png) |
+| ![Desktop Version](https://github.com/etan-nestor/audio-files/raw/main/desktop-1.png) | ![Mobile Version](https://github.com/etan-nestor/audio-files/raw/main/mob-1.png) | ![Tablet Version](https://github.com/etan-nestor/audio-files/raw/main/tab-1.png) |
 
 *(Cliquez sur les images pour agrandir)*
 
@@ -61,6 +61,3 @@ cp .env.local
 
 # 4. Lancer le serveur
 npm run dev
-
-
-<div align="center"> <sub>Développé avec ❤️ par <a href="https://nestor.opennumeric.com">Nestor Compaoré</a> | <a href="https://opennumeric.com">Open Numeric</a></sub> </div> ```
