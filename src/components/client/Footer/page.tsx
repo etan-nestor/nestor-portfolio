@@ -1,28 +1,28 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronUp, Github, Linkedin, Mail, Twitter, ArrowUpRight } from 'lucide-react'
+import { ChevronUp, Github, Linkedin, Mail, ArrowUpRight, Facebook } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const socialLinks = [
   { 
     icon: <Github size={16} className="sm:w-5 sm:h-5" />, 
-    href: 'https://github.com',
+    href: 'https://github.com/etan-nestor',
     name: 'GitHub'
   },
   { 
     icon: <Linkedin size={16} className="sm:w-5 sm:h-5" />, 
-    href: 'https://linkedin.com',
+    href: 'www.linkedin.com/in/nestor-compaore-5a9200247',
     name: 'LinkedIn'
   },
   { 
-    icon: <Twitter size={16} className="sm:w-5 sm:h-5" />, 
-    href: 'https://twitter.com',
-    name: 'Twitter'
+    icon: <Facebook size={16} className="sm:w-5 sm:h-5" />, 
+    href: 'https://www.facebook.com/EtanNestoria?_rdc=1&_rdr#',
+    name: 'Facebook'
   },
   { 
     icon: <Mail size={16} className="sm:w-5 sm:h-5" />, 
-    href: 'mailto:contact@example.com',
+    href: 'mailto:tech00.02in@gmail.com',
     name: 'Email'
   },
 ]
@@ -237,6 +237,7 @@ export default function Footer() {
         >
           Conçu avec <span className="text-blue-400">Firebase</span><span className="text-purple-400">Studio</span>
         </motion.p>
+
       </div>
     </motion.footer>
   )
