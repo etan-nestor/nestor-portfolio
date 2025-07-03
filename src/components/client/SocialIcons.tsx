@@ -1,13 +1,13 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Twitter, Facebook } from 'lucide-react';
+import { Linkedin, Github, Facebook } from 'lucide-react';
 
 export default function SocialIcons() {
   const socials = [
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />,
-      url: 'www.linkedin.com/in/nestor-compaore-5a9200247',
+      url: 'https://www.linkedin.com/in/nestor-compaore-5a9200247',
       color: 'bg-blue-600 hover:bg-blue-700'
     },
     {

@@ -12,7 +12,7 @@ const socialLinks = [
   },
   { 
     icon: <Linkedin size={16} className="sm:w-5 sm:h-5" />, 
-    href: 'www.linkedin.com/in/nestor-compaore-5a9200247',
+    href: 'https://www.linkedin.com/in/nestor-compaore-5a9200247',
     name: 'LinkedIn'
   },
   { 
